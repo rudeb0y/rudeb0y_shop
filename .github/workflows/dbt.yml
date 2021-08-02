@@ -2,8 +2,6 @@ name: dbt
 
 on:
   - push
-  - pull_request
-
 
 env:
   DBT_PROFILES_DIR: ./
@@ -54,7 +52,7 @@ jobs:
       - run: dbt compile
 
       # get the latest manifest
-      - run: aws s3 cp s3://${BUCKET}/jaffle_shop/manifest.json .
+      - run: aws s3 cp s3://${BUCKET}/rudeb0y_shop/manifest.json .
 
       # we always full refresh incase the schema changed.
       - run: dbt seed --target ${TARGET} --select state:modified --state . --full-refresh
