@@ -20,7 +20,7 @@ env:
 jobs:
 
   dbt:
-    name: dbt
+    name: Run DBT
     runs-on: ubuntu-latest
 
     steps:
