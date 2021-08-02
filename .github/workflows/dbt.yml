@@ -41,7 +41,7 @@ jobs:
         id: cache-dbt-deps
         with:
           path: ./dbt_modules/
-          key: dbt-deps-${{ hashFiles('**/packages.yml') }}
+          key: dbt-deps-${{ hashFiles('packages.yml') }}
 
       # install dependencies
       - run: dbt deps
