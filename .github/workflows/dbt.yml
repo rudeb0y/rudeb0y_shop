@@ -1,9 +1,8 @@
 name: dbt
 
 on:
-  push:
-    branches:
-      - master
+  - push
+  - pull_request
 
 
 env:
@@ -40,9 +39,17 @@ jobs:
 
       # - run: sqlfluff lint
 
+      - uses: actions/cache@v2
+        id: cache-dbt-deps
+        with:
+          path: ./dbt_modules/
+          key: dbt-deps-${{ hashFiles('**/packages.yml') }}
+          restore-keys: |
+            dbt-deps-
+
       # install dependencies
       - run: dbt deps
-        if:
+        if: steps.cache-dbt-deps.outputs.cache-hit != 'true'
 
       - run: dbt compile
 
