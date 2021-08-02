@@ -42,8 +42,6 @@ jobs:
         with:
           path: ./dbt_modules/
           key: dbt-deps-${{ hashFiles('**/packages.yml') }}
-          restore-keys: |
-            dbt-deps-
 
       # install dependencies
       - run: dbt deps
