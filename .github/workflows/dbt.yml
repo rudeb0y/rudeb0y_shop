@@ -20,7 +20,7 @@ env:
 jobs:
 
   dbt:
-    name: dbt
+    name: Run DBT
     runs-on: ubuntu-latest
 
     steps:
@@ -41,9 +41,7 @@ jobs:
         id: cache-dbt-deps
         with:
           path: ./dbt_modules/
-          key: dbt-deps-${{ hashFiles('**/packages.yml') }}
-          restore-keys: |
-            dbt-deps-
+          key: dbt-deps-${{ hashFiles('packages.yml') }}
 
       # install dependencies
       - run: dbt deps
