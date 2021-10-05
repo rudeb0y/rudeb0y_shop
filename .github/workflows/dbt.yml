@@ -2,10 +2,7 @@ name: dbt
 
 on:
   push:
-
   workflow_dispatch:
-  schedule:
-    - cron: '0 9 * * *' # 9:00 am (UTC) everyday
 
 env:
   DBT_PROFILES_DIR: ./
