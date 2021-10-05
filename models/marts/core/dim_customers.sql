@@ -29,6 +29,7 @@ final as (
 
     left join customer_orders using (customer_id)
 
+
     left join customer_payments using (customer_id)
 
 )
