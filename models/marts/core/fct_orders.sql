@@ -6,7 +6,7 @@ with orders as (
 
 ),
 
-order_payments as (
+payments as (
 
     select * from {{ ref('order_payments') }}
 
@@ -22,15 +22,15 @@ final as (
 
         {% for payment_method in payment_methods -%}
 
-        order_payments.{{payment_method}}_amount,
+        payments.{{payment_method}}_amount,
 
         {% endfor -%}
 
-        order_payments.total_amount as amount
+        payments.total_amount as amount
 
     from orders
 
-    left join order_payments using (order_id)
+    left join payments using (order_id)
 
 )
 
