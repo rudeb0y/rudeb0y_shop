@@ -20,6 +20,7 @@ final as (
         orders.order_date,
         orders.status,
 
+
         {% for payment_method in payment_methods -%}
 
         payments.{{payment_method}}_amount,

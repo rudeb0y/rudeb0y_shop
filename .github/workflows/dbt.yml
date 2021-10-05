@@ -1,7 +1,8 @@
 name: dbt
 
 on:
-  - push
+  push:
+  workflow_dispatch:
 
 env:
   DBT_PROFILES_DIR: ./
@@ -15,7 +16,6 @@ env:
   AWS_DEFAULT_REGION: eu-west-1
 
   BUCKET: ${{secrets.AWS_S3_BUCKET}}
-
 
 jobs:
 
