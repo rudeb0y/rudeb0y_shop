@@ -16,7 +16,6 @@ env:
 
   BUCKET: ${{secrets.AWS_S3_BUCKET}}
 
-
 jobs:
 
   dbt:
