@@ -1,7 +1,6 @@
 name: dbt
 
-on:
-  - push
+on: [push]
 
 env:
   DBT_PROFILES_DIR: ./
