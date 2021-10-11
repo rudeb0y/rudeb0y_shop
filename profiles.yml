@@ -11,7 +11,7 @@ rudeb0y_shop:
 
       role: TRANSFORMER
       database: ANALYTICS
-      warehouse: COMPUTE_WH
+      warehouse: TRANSFORMING
       schema: CI
       threads: 16
       client_session_keep_alive: False
